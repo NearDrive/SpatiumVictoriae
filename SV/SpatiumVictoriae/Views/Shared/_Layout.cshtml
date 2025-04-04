@@ -32,10 +32,22 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <!-- New game screen grid layout -->
+    <div class="game-screen">
+        <div class="banner-top">
+            @* Optionally render a partial view for the top ad banner *@
+            @Html.Partial("_TopBanner")
+        </div>
+        <div class="banner-left">
+            @Html.Partial("_LeftBanner")
+        </div>
+        <div class="game-content">
             @RenderBody()
-        </main>
+        </div>
+        <div class="banner-right">
+            @Html.Partial("_RightBanner")
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">

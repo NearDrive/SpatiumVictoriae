@@ -1,31 +1,72 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
+}
+
+/* --- Custom Game Screen Layout --- */
+
+.game-screen {
+    display: grid;
+    grid-template-areas:
+        "top top top"
+        "left content right";
+    grid-template-columns: 200px 1fr 200px; /* Adjust side banner widths as needed */
+    grid-template-rows: auto 1fr;
+    min-height: 80vh; /* Adjust height as needed */
+    gap: 1rem; /* Optional: space between grid items */
+}
+
+.banner-top {
+    grid-area: top;
+    background-color: #ccc; /* Customize or remove background */
+    text-align: center;
+    padding: 1rem;
+}
+
+.banner-left {
+    grid-area: left;
+    background-color: #aaa; /* Customize as needed */
+    padding: 1rem;
+}
+
+.banner-right {
+    grid-area: right;
+    background-color: #aaa; /* Customize as needed */
+    padding: 1rem;
+}
+
+.game-content {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Customize as needed */
+    padding: 1rem;
 }
